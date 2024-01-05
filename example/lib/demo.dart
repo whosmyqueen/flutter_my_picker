@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_my_picker/flutter_my_picker.dart';
 import 'package:flutter_my_picker/common/date.dart';
+import 'package:flutter_my_picker/flutter_my_picker.dart';
 
 class DemoPage extends StatefulWidget {
   @override
@@ -62,14 +62,13 @@ class _DemoPageState extends State<DemoPage> {
         }),
         _Button('月份选择器', () {
           MyPicker.showPicker(
-              context: context,
-              current: date,
-              mode: MyPickerMode.month,
-              onChange: _change('yyyy-MM'));
+              context: context, current: date, mode: MyPickerMode.month, onChange: _change('yyyy-MM'));
         }),
         _Button('日期选择器', () {
           MyPicker.showDatePicker(
-            header: Center(child: Text('自定义头部'),),
+            header: Center(
+              child: Text('自定义头部'),
+            ),
             context: context,
             current: date,
             // mode: MyPickerMode.date,
@@ -119,7 +118,7 @@ class _Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return TextButton(
       onPressed: onPressed,
       child: Text(text),
     );
